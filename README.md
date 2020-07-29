@@ -1,6 +1,6 @@
-# ygov finance
+# DOS Uniswap LP Rewards
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is forked from [YFI/yearn](https://github.com/iearn-finance/ygov-finance) and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

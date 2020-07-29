@@ -114,21 +114,21 @@ class Store {
       },
       rewardPools: [
         {
-          id: 'yearn',
-          name: 'yearn',
-          website: 'curve.fi/y',
-          link: 'https://curve.fi/y',
+          id: 'DOS/ETH',
+          name: 'DOS/ETH Uniswap V2 LP Token',
+          website: 'https://app.uniswap.org/#/swap',
+          link: 'https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x0A913beaD80F321E7Ac35285Ee10d9d922659cB7',
           depositsEnabled: false,
           tokens: [
             {
               id: 'ycurvefi',
               address: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
-              symbol: 'curve.fi',
+              symbol: 'UNI-V2',
               abi: config.erc20ABI,
               decimals: 18,
               rewardsAddress: config.yCurveFiRewardsAddress,
               rewardsABI: config.yCurveFiRewardsABI,
-              rewardsSymbol: 'YFI',
+              rewardsSymbol: 'DOS',
               decimals: 18,
               balance: 0,
               stakedBalance: 0,
@@ -137,21 +137,21 @@ class Store {
           ]
         },
         {
-          id: 'Balancer',
-          name: 'Balancer',
-          website: 'pools.balancer.exchange',
-          link: 'https://pools.balancer.exchange/#/pool/0x60626db611a9957C1ae4Ac5b7eDE69e24A3B76c5',
+          id: 'DOS/USDT',
+          name: 'DOS/USDT Uniswap V2 LP Token',
+          website: 'https://app.uniswap.org/#/swap',
+          link: 'https://app.uniswap.org/#/swap?inputCurrency=0xdac17f958d2ee523a2206206994597c13d831ec7&outputCurrency=0x0A913beaD80F321E7Ac35285Ee10d9d922659cB7&use=v1',
           depositsEnabled: false,
           tokens: [
             {
-              id: 'bpt',
-              address: '0x60626db611a9957C1ae4Ac5b7eDE69e24A3B76c5',
-              symbol: 'BPT',
+              id: 'ycurvefi',
+              address: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
+              symbol: 'UNI-V2',
               abi: config.erc20ABI,
               decimals: 18,
-              rewardsAddress: config.balancerRewardsAddress,
-              rewardsABI: config.balancerRewardsABI,
-              rewardsSymbol: 'YFI',
+              rewardsAddress: config.yCurveFiRewardsAddress,
+              rewardsABI: config.yCurveFiRewardsABI,
+              rewardsSymbol: 'DOS',
               decimals: 18,
               balance: 0,
               stakedBalance: 0,
@@ -159,75 +159,7 @@ class Store {
             }
           ]
         },
-        {
-          id: 'Governance',
-          name: 'Governance',
-          website: 'pools.balancer.exchange',
-          link: 'https://pools.balancer.exchange/#/pool/0x95c4b6c7cff608c0ca048df8b81a484aa377172b',
-          depositsEnabled: false,
-          tokens: [
-            {
-              id: 'bpt',
-              address: '0x95c4b6c7cff608c0ca048df8b81a484aa377172b',
-              symbol: 'BPT',
-              abi: config.bpoolABI,
-              decimals: 18,
-              rewardsAddress: config.governanceAddress,
-              rewardsABI: config.governanceABI,
-              rewardsSymbol: 'YFI',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        },
-        {
-          id: 'FeeRewards',
-          name: 'Fee Rewards V1',
-          website: 'ygov.finance',
-          link: 'https://ygov.finance/',
-          depositsEnabled: false,
-          tokens: [
-            {
-              id: 'yfi',
-              address: config.yfiAddress,
-              symbol: 'YFI',
-              abi: config.yfiABI,
-              decimals: 18,
-              rewardsAddress: config.feeRewardsAddress,
-              rewardsABI: config.feeRewardsABI,
-              rewardsSymbol: '$',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        },
-        {
-          id: 'FeeRewardsV2',
-          name: 'Fee Rewards V2',
-          website: 'ygov.finance',
-          link: 'https://ygov.finance/',
-          depositsEnabled: true,
-          tokens: [
-            {
-              id: 'yfi',
-              address: config.yfiAddress,
-              symbol: 'YFI',
-              abi: config.yfiABI,
-              decimals: 18,
-              rewardsAddress: config.governanceV2Address,
-              rewardsABI: config.governanceV2ABI,
-              rewardsSymbol: '$',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        }
+
       ]
     }
 

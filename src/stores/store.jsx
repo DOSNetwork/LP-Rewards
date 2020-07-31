@@ -118,16 +118,16 @@ class Store {
           name: 'DOS/ETH Uniswap V2 LP Token',
           website: 'https://app.uniswap.org/#/swap',
           link: 'https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x0A913beaD80F321E7Ac35285Ee10d9d922659cB7',
-          depositsEnabled: false,
+          depositsEnabled: true,
           tokens: [
             {
-              id: 'ycurvefi',
-              address: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
+              id: 'univ2eth',
+              address: '0xdAdf443c086F9D3C556ebC57c398a852f6a02898',
               symbol: 'UNI-V2',
               abi: config.erc20ABI,
               decimals: 18,
-              rewardsAddress: config.yCurveFiRewardsAddress,
-              rewardsABI: config.yCurveFiRewardsABI,
+              rewardsAddress: config.uniV2EthRewardsAddress,
+              rewardsABI: config.uniV2RewardsABI,
               rewardsSymbol: 'DOS',
               decimals: 18,
               balance: 0,
@@ -136,30 +136,6 @@ class Store {
             }
           ]
         },
-        {
-          id: 'DOS/USDT',
-          name: 'DOS/USDT Uniswap V2 LP Token',
-          website: 'https://app.uniswap.org/#/swap',
-          link: 'https://app.uniswap.org/#/swap?inputCurrency=0xdac17f958d2ee523a2206206994597c13d831ec7&outputCurrency=0x0A913beaD80F321E7Ac35285Ee10d9d922659cB7&use=v1',
-          depositsEnabled: false,
-          tokens: [
-            {
-              id: 'ycurvefi',
-              address: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
-              symbol: 'UNI-V2',
-              abi: config.erc20ABI,
-              decimals: 18,
-              rewardsAddress: config.yCurveFiRewardsAddress,
-              rewardsABI: config.yCurveFiRewardsABI,
-              rewardsSymbol: 'DOS',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        },
-
       ]
     }
 

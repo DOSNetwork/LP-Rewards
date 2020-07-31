@@ -10,7 +10,7 @@ import { colors } from '../../theme'
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import WbIncandescentIcon from '@material-ui/icons/WbIncandescent';
-import DetailsIcon from '@material-ui/icons/Details';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 
 const styles = theme => ({
   root: {
@@ -187,7 +187,7 @@ class Home extends Component {
     return (
       <div className={ classes.root }>
         <Card className={ `${classes.card} ${classes.earn}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
-          <DetailsIcon className={ `${classes.icon} icon` } />
+          <AccountBalanceIcon className={ `${classes.icon} icon` } />
           <Typography variant={'h3'} className={ `${classes.title} title` }>Stake</Typography>
         </Card>
         {/*<Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'propose') } }>

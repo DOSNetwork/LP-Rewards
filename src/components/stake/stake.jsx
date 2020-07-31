@@ -238,6 +238,12 @@ const emitter = Store.emitter
 const dispatcher = Store.dispatcher
 const store = Store.store
 
+Number.prototype.toFixedDown = function(digits) {
+  var re = new RegExp("(\\d+\\.\\d{" + digits + "})(\\d)"),
+    m = this.toString().match(re);
+  return m ? parseFloat(m[1]) : this.valueOf();
+};
+
 class Stake extends Component {
 
   constructor(props) {
@@ -611,8 +617,8 @@ class Stake extends Component {
     return (
       <div className={ classes.valContainer } key={asset.id + '_' + type}>
         <div className={ classes.balances }>
-          { type === 'stake' && <Typography variant='h4' onClick={ () => { this.setAmount(asset.id, type, (asset ? asset.balance : 0)) } } className={ classes.value } noWrap>{ 'Balance: '+ ( asset && asset.balance ? (Math.floor(asset.balance*10000)/10000).toFixed(4) : '0.0000') } { asset ? asset.symbol : '' }</Typography> }
-          { type === 'unstake' && <Typography variant='h4' onClick={ () => { this.setAmount(asset.id, type, (asset ? asset.stakedBalance : 0)) } } className={ classes.value } noWrap>{ 'Balance: '+ ( asset && asset.stakedBalance ? (Math.floor(asset.stakedBalance*10000)/10000).toFixed(4) : '0.0000') } { asset ? asset.symbol : '' }</Typography> }
+          { type === 'stake' && <Typography variant='h4' onClick={ () => { this.setAmount(asset.id, type, (asset ? asset.balance : 0)) } } className={ classes.value } noWrap>{ 'Balance: '+ ( asset && asset.balance ? (asset.balance.toFixedDown(7)).toString() : '0.0000000') } { asset ? asset.symbol : '' }</Typography> }
+          { type === 'unstake' && <Typography variant='h4' onClick={ () => { this.setAmount(asset.id, type, (asset ? asset.stakedBalance : 0)) } } className={ classes.value } noWrap>{ 'Balance: '+ ( asset && asset.stakedBalance ? (asset.stakedBalance.toFixedDown(7)).toString() : '0.0000000') } { asset ? asset.symbol : '' }</Typography> }
         </div>
         <div>
           <TextField
@@ -623,7 +629,7 @@ class Stake extends Component {
             value={ amount }
             error={ amountError }
             onChange={ this.onChange }
-            placeholder="0.00"
+            placeholder="0.0000000"
             variant="outlined"
             InputProps={{
               endAdornment: <InputAdornment position="end" className={ classes.inputAdornment }><Typography variant='h3' className={ '' }>{ asset.symbol }</Typography></InputAdornment>,
@@ -658,7 +664,7 @@ class Stake extends Component {
   }
 
   setAmount = (id, type, balance) => {
-    const bal = (Math.floor((balance === '' ? '0' : balance)*10000)/10000).toFixed(4)
+    const bal = ((balance === '' ? '0' : balance).toFixedDown(7)).toString()
     let val = []
     val[id + '_' + type] = bal
     this.setState(val)

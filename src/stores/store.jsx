@@ -115,8 +115,8 @@ class Store {
       rewardPools: [
         {
           id: 'DOS/ETH',
-          name: 'DOS/ETH Uniswap V2 LP Token',
-          website: 'https://app.uniswap.org/#/swap',
+          name: 'Uniswap V2 LP',
+          website: 'uniswap.exchange',
           link: 'https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x0A913beaD80F321E7Ac35285Ee10d9d922659cB7',
           depositsEnabled: true,
           tokens: [
@@ -136,6 +136,30 @@ class Store {
             }
           ]
         },
+        {
+          id: 'DOS/USDC',
+          name: 'Balancer LP',
+          website: 'pools.balancer.exchange',
+          link: 'https://pools.balancer.exchange/#/pool/0x7d014a7464c91f20da99a3e6f77bc5506ddf3c5e/',
+          depositsEnabled: true,
+          tokens: [
+            {
+              id: 'bptusdc',
+              address: '0x7d014A7464C91F20da99a3E6f77bc5506dDF3C5E',
+              symbol: 'BPT',
+              abi: config.erc20ABI,
+              decimals: 18,
+              rewardsAddress: config.balancerRewardsAddress,
+              rewardsABI: config.balancerRewardsABI,
+              rewardsSymbol: 'DOS',
+              decimals: 18,
+              balance: 0,
+              stakedBalance: 0,
+              rewardsAvailable: 0
+            }
+          ]
+        },
+
       ]
     }
 

@@ -274,7 +274,7 @@ class RewardPools extends Component {
       <Typography variant='h3' className={ classes.poolName }>{ rewardPool.name }</Typography>
       <Typography variant='h5' className={ classes.poolWebsite }><a href={ rewardPool.link } target="_blank">{ rewardPool.website }</a></Typography>
       <Typography varian='h4' className={ classes.tokensList } align='center'>
-        Contract Address: <a href={ 'https://etherscan.io/address/'+addy } target="_blank">{ address }</a>
+        Reward Contract: <a href={ 'https://etherscan.io/address/'+addy } target="_blank">{ address }</a>
 
       </Typography>
       <Button
